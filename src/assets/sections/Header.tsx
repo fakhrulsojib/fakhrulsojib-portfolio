@@ -17,12 +17,17 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="header">
-      <nav className="nav">
-        <ul className="nav-list">
+    <header className="header sticky top-0 bg-gray-800 py-4 px-8 z-50 shadow-md">
+      <nav className="nav flex justify-between items-center">
+        <ul className="nav-list flex gap-6 list-none m-0 p-0">
           {sections.map((section) => (
             <li key={section.id}>
-              <a href={`#${section.id}`}>{section.name}</a>
+              <a
+                href={`#${section.id}`}
+                className="text-white font-bold transition-colors duration-300 hover:text-blue-400"
+              >
+                {section.name}
+              </a>
             </li>
           ))}
         </ul>
