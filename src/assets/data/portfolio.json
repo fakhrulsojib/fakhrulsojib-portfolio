@@ -1,0 +1,94 @@
+{
+    "navigation": [
+        {
+            "id": "hero",
+            "name": "Home"
+        },
+        {
+            "id": "about",
+            "name": "About"
+        },
+        {
+            "id": "projects",
+            "name": "Projects"
+        },
+        {
+            "id": "skills",
+            "name": "Skills"
+        },
+        {
+            "id": "contact",
+            "name": "Contact"
+        }
+    ],
+    "hero": {
+        "title": "Welcome to My Portfolio",
+        "tagline": "I’m John Doe, a passionate Software Engineer.",
+        "ctaText": "Contact Me"
+    },
+    "about": {
+        "heading": "About Me",
+        "paragraphs": [
+            "Hi, I'm John Doe, a Software Engineer passionate about building elegant and efficient solutions. I specialize in React, Node.js, and cloud technologies.",
+            "With 5 years of experience, I've worked on projects ranging from e-commerce platforms to mobile applications."
+        ]
+    },
+    "skills": [
+        {
+            "name": "JavaScript",
+            "level": "Advanced"
+        },
+        {
+            "name": "React",
+            "level": "Advanced"
+        },
+        {
+            "name": "Node.js",
+            "level": "Intermediate"
+        },
+        {
+            "name": "Cloud Computing",
+            "level": "Intermediate"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Project 1",
+            "description": "A cool project",
+            "link": "#"
+        },
+        {
+            "title": "Project 2",
+            "description": "Another cool project",
+            "link": "#"
+        },
+        {
+            "title": "Project 3",
+            "description": "Yet another project",
+            "link": "#"
+        }
+    ],
+    "contact": {
+        "phone": "+880192828282828",
+        "socialLinks": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/yourusername",
+                "icon": "🐙"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://linkedin.com/in/yourprofile",
+                "icon": "🔗"
+            },
+            {
+                "name": "Twitter",
+                "url": "https://twitter.com/yourhandle",
+                "icon": "🐦"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "© 2024 Md Fakhrul Islam (Sojib). All rights reserved."
+    }
+}

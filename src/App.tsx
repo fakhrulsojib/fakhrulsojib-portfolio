@@ -1,10 +1,10 @@
-import Header from "./assets/sections/Header";
-import Hero from "./assets/sections/Hero";
-import About from "./assets/sections/About";
-import Projects from "./assets/sections/Projects";
-import Skills from "./assets/sections/Skills";
-import Contact from "./assets/sections/Contact";
-import Footer from "./assets/sections/Footer";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Projects from "./sections/Projects";
+import Skills from "./sections/Skills";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 function App() {
   return (
