@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         });
       },
       {
-        threshold: 0.5, // Adjust as needed.  0.5 means 50% visible
+        threshold: 0.5,
       }
     );
 
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
       navigation.forEach((navItem) => {
         const section = document.getElementById(navItem.id);
         if (section) {
-          observer.unobserve(section); // Important: Clean up the observer
+          observer.unobserve(section);
         }
       });
     };
@@ -46,9 +46,12 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
-      console.log(hamburgerRef.current);
-
-      if (hamburgerRef.current && !hamburgerRef.current.contains(target)) {
+      if (
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(target) &&
+        navRef.current &&
+        !navRef.current.contains(target)
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -59,33 +62,16 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log("Menu open state changed: ", isMenuOpen);
-  }, [isMenuOpen]);
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const openMenu = () => {
-    setIsMenuOpen(true);
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
-    <header className={`header`}>
+    <header className="header">
       <div
+        ref={hamburgerRef}
         className={`hamburger ${isMenuOpen ? "open" : ""}`}
-        onClick={
-          isMenuOpen
-            ? () => {
-                console.log("Called for closing " + isMenuOpen);
-                closeMenu();
-              }
-            : () => {
-                console.log("Called for opening " + isMenuOpen);
-                openMenu();
-              }
-        }
+        onClick={toggleMenu}
       >
         <div></div>
         <div></div>
