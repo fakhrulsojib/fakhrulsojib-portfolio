@@ -32,19 +32,18 @@ section {
   scroll-snap-align: start;
   transition: transform 0.5s ease-in-out;
   overflow-y: auto;
-  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 section::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  display: none;
 }
 
 .section-heading {
   display: block;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 2rem;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   color: #333;
