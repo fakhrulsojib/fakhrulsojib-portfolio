@@ -17,19 +17,21 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="projects">
-      <h2 className="projects-heading">My Projects</h2>
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            link={project.link}
-            imageUrl={project.imageUrl}
-            technologies={project.technologies}
-            defaultImage={defaultProjectImage}
-          />
-        ))}
+      <div className="section-content">
+        <h2 className="section-heading">My Projects</h2>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              link={project.link}
+              imageUrl={project.imageUrl}
+              technologies={project.technologies}
+              defaultImage={defaultProjectImage}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

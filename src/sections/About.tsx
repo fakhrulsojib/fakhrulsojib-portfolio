@@ -7,8 +7,8 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="about">
-      <div className="about-content">
-        <h2>{heading}</h2>
+      <div className="section-content">
+        <h2 className="section-heading">{heading}</h2>
         {paragraphs.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}

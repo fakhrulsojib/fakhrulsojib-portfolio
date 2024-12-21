@@ -1,25 +1,26 @@
 import Header from "./sections/Header";
-import Hero from "./sections/Hero";
+import Home from "./sections/Home";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
-function App() {
+const App: React.FC = () => {
+  useScrollAnimation();
+
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <Home />
         <About />
         <Projects />
         <Skills />
         <Contact />
       </main>
-      <Footer />
     </>
   );
-}
+};
 
 export default App;

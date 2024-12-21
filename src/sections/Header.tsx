@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import portfolioData from "../assets/data/portfolio.json";
 
@@ -6,47 +6,92 @@ const Header: React.FC = () => {
   const { navigation } = portfolioData;
 
   const [selectedSection, setSelectedSection] = useState<string>(
-    window.location.hash ? window.location.hash.slice(1) : "hero"
+    window.location.hash ? window.location.hash.slice(1) : "home"
   );
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
+  const hamburgerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setSelectedSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Adjust as needed.  0.5 means 50% visible
+      }
+    );
 
+    navigation.forEach((navItem) => {
+      const section = document.getElementById(navItem.id);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
       navigation.forEach((navItem) => {
         const section = document.getElementById(navItem.id);
         if (section) {
-          const rect = section.getBoundingClientRect();
-
-          if (
-            rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2
-          ) {
-            setSelectedSection(navItem.id);
-          }
+          observer.unobserve(section); // Important: Clean up the observer
         }
       });
     };
-
-    const handleHashChange = () => {
-      setSelectedSection(
-        window.location.hash ? window.location.hash.slice(1) : "hero"
-      );
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("hashchange", handleHashChange);
-    };
   }, [navigation]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      console.log(hamburgerRef.current);
+
+      if (hamburgerRef.current && !hamburgerRef.current.contains(target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("Menu open state changed: ", isMenuOpen);
+  }, [isMenuOpen]);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
+
   return (
-    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
-      <nav className="nav">
+    <header className={`header`}>
+      <div
+        className={`hamburger ${isMenuOpen ? "open" : ""}`}
+        onClick={
+          isMenuOpen
+            ? () => {
+                console.log("Called for closing " + isMenuOpen);
+                closeMenu();
+              }
+            : () => {
+                console.log("Called for opening " + isMenuOpen);
+                openMenu();
+              }
+        }
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav ref={navRef} className={`nav ${isMenuOpen ? "open" : ""}`}>
         <ul className="nav-list">
           {navigation.map((navItem) => (
             <li key={navItem.id}>
@@ -55,7 +100,10 @@ const Header: React.FC = () => {
                 className={`nav-link ${
                   selectedSection === navItem.id ? "selected" : ""
                 }`}
-                onClick={() => setSelectedSection(navItem.id)}
+                onClick={() => {
+                  setSelectedSection(navItem.id);
+                  setIsMenuOpen(false);
+                }}
               >
                 {navItem.name}
               </a>

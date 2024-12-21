@@ -1,23 +1,29 @@
 .projects {
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.projects-heading {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
+  background-color: #72BAA9;
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .project-card {
-  max-width: 350px; /* Limits card width */
-  margin: auto; /* Center-aligns cards */
+  flex: 1 1 calc(33.333% - 2rem); /* Cards take up 1/3 of container width minus gap */
+  max-width: 350px; /* Optional: Limit max card width */
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 1 1 calc(50% - 2rem); /* Adjust to 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    flex: 1 1 100%; /* Full width on small screens */
+  }
 }

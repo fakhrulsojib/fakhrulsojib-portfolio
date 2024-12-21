@@ -1,7 +1,7 @@
 {
     "navigation": [
         {
-            "id": "hero",
+            "id": "home",
             "name": "Home"
         },
         {
@@ -21,51 +21,43 @@
             "name": "Contact"
         }
     ],
-    "hero": {
-        "title": "Welcome to My Portfolio",
-        "tagline": "I’m John Doe, a passionate Software Engineer.",
-        "ctaText": "Contact Me"
+    "home": {
+        "heading": "I am",
+        "name": "Md Fakhrul Islam",
+        "tagline": "A full stack software engineer.",
+        "ctaText": "Contact me"
     },
     "about": {
         "heading": "About Me",
         "paragraphs": [
-            "Hi, I'm John Doe, a Software Engineer passionate about building elegant and efficient solutions. I specialize in React, Node.js, and cloud technologies.",
-            "With 5 years of experience, I've worked on projects ranging from e-commerce platforms to mobile applications."
+            "Software Engineer at Therap (BD) Ltd. and a Mathematics undergraduate who loves solving problems using programming.",
+            "I’ve practiced competitive programming for over 4 years, both individually and as part of teams, in online and onsite contests."
         ]
     },
-    "skills": [
-        {
-            "name": "JavaScript",
-            "level": "Advanced"
-        },
-        {
-            "name": "React",
-            "level": "Advanced"
-        },
-        {
-            "name": "Node.js",
-            "level": "Intermediate"
-        },
-        {
-            "name": "Cloud Computing",
-            "level": "Intermediate"
-        }
-    ],
+    "skills": {
+        "proficient": [
+            "C++",
+            "Java",
+            "Spring",
+            "PostgreSQL",
+            "Oracle",
+            "Git"
+        ],
+        "familiar": [
+            "Javascript",
+            "Python",
+            "jQuery",
+            "React",
+            "Spring Boot",
+            "MySQL",
+            "Linux"
+        ]
+    },
     "projects": [
         {
-            "title": "Project 1",
-            "description": "A cool project",
-            "link": "#"
-        },
-        {
-            "title": "Project 2",
-            "description": "Another cool project",
-            "link": "#"
-        },
-        {
-            "title": "Project 3",
-            "description": "Yet another project",
-            "link": "#"
+            "title": "Samagam",
+            "description": "Event Management Web Application",
+            "link": "https://bitbucket.org/fakhrulsojib/samagam/src/development/"
         }
     ],
     "contact": {
@@ -74,17 +66,17 @@
             {
                 "name": "GitHub",
                 "url": "https://github.com/yourusername",
-                "icon": "🐙"
+                "icon": "/src/assets/images/icons/github-logo.png"
             },
             {
                 "name": "LinkedIn",
                 "url": "https://linkedin.com/in/yourprofile",
-                "icon": "🔗"
+                "icon": "/src/assets/images/icons/linkedin-logo.png"
             },
             {
-                "name": "Twitter",
-                "url": "https://twitter.com/yourhandle",
-                "icon": "🐦"
+                "name": "Facebook",
+                "url": "https://facebook.com/username",
+                "icon": "/src/assets/images/icons/facebook-logo.png"
             }
         ]
     },

@@ -1,10 +1,16 @@
 .footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #22222252;
-  color: #fff;
-  font-size: 0.9rem;
-  position: relative;
-  bottom: 0;
+  padding: 0.5rem;
+  background: #2a2a2a;
+  color: #cfcfcf;
+  font-size: 0.85rem;
+  letter-spacing: 0.04rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-text {
+  margin: 0.5rem 0;
+  opacity: 0.9;
 }
