@@ -1,6 +1,7 @@
 import React from "react";
-import "./Home.css";
+// import "./Home.css";
 import portfolioData from "../assets/data/portfolio.json";
+import "animate.css";
 
 const Home: React.FC = () => {
   const { heading, name, tagline, resumeLink } = portfolioData.home;
@@ -12,7 +13,9 @@ const Home: React.FC = () => {
           {heading}
           <div className="home-name">{name}</div>
         </h1>
-        <h2 className="home-tagline">{tagline}</h2>
+        <div className="animate__animated animate__bounce">
+          <h2 className="home-tagline">{tagline}</h2>
+        </div>
         <a href={resumeLink} target="_blank" className="home-button">
           Resume
         </a>

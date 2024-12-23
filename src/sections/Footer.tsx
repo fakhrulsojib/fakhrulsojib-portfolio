@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+// import "./Footer.css";
 import portfolioData from "../assets/data/portfolio.json";
 
 const Footer: React.FC = () => {

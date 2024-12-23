@@ -2,7 +2,7 @@ import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import portfolioData from "../assets/data/portfolio.json";
 import defaultProjectImage from "../assets/images/default-project.jpg";
-import "./Projects.css"; // Import custom styles if needed
+// import "./Projects.css";
 
 interface Project {
   title: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Contact.css";
+// import "./Contact.css";
 import portfolioData from "../assets/data/portfolio.json";
 import Footer from "./Footer";
 

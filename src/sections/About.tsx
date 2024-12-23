@@ -1,5 +1,5 @@
 import React from "react";
-import "./About.css";
+// import "./About.css";
 import portfolioData from "../assets/data/portfolio.json";
 
 const About: React.FC = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./Header.css";
+// import "./Header.css";
 import portfolioData from "../assets/data/portfolio.json";
 
 const Header: React.FC = () => {

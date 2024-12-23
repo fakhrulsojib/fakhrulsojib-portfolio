@@ -4,11 +4,8 @@ import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
-import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
 const App: React.FC = () => {
-  useScrollAnimation();
-
   return (
     <>
       <Header />
