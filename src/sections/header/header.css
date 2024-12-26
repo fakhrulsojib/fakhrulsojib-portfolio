@@ -1,0 +1,112 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--background-color, #ffffff);
+  color: var(--text-color, #000000);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color, #000000);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  visibility: visible;
+  flex-wrap: nowrap;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color, #000000);
+  transition: color 0.3s ease;
+}
+
+.nav-link.selected {
+  font-weight: bold;
+  color: var(--accent-color, #007bff);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 55px;
+    right: 24px;
+    flex-direction: column;
+    background-color: var(--background-color, #ffffff);
+    width: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, max-height 0.3s ease, visibility 0.3s ease,
+      opacity 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .nav.open {
+    width: 150px;
+    max-height: 50vh;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+}
