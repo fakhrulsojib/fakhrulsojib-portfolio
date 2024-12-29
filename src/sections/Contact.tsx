@@ -12,21 +12,27 @@ const Contact: React.FC = () => {
         <div className="section-content">
           <h2 className="section-heading">Connect with Me</h2>
           <div className="social-links">
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link"
-              >
-                <img
-                  src={link.icon}
-                  alt={`${link.name} logo`}
-                  className="social-icon"
-                />
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              const iconSrc = new URL(
+                `../assets/images/icons/${link.icon}`,
+                import.meta.url
+              ).href;
+              return (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <img
+                    src={iconSrc}
+                    alt={`${link.name} logo`}
+                    className="social-icon"
+                  />
+                </a>
+              );
+            })}
           </div>
         </div>
         <Footer />

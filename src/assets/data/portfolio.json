@@ -66,17 +66,17 @@
             {
                 "name": "GitHub",
                 "url": "https://github.com/fakhrulsojib",
-                "icon": "/src/assets/images/icons/github-logo.png"
+                "icon": "github-logo.png"
             },
             {
                 "name": "LinkedIn",
                 "url": "https://linkedin.com/in/fakhrulsojib",
-                "icon": "/src/assets/images/icons/linkedin-logo.png"
+                "icon": "linkedin-logo.png"
             },
             {
                 "name": "Facebook",
                 "url": "https://facebook.com/fakhrulsojib",
-                "icon": "/src/assets/images/icons/facebook-logo.png"
+                "icon": "facebook-logo.png"
             }
         ]
     },
