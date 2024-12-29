@@ -6,12 +6,11 @@
   "homepage": "https://fakhrulsojib.github.io/fakhrulsojib-portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "fakhrulsojib-portfolio": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
