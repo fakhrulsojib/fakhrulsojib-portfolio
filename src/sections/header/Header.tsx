@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ThemeToggler from "../../hooks/ThemeToggler";
 import Navigation from "./Navigation";
 import HamburgerMenu from "./HamburgerMenu";
-import portfolioData from "../../assets/data/portfolio.json";
+import portfolioData from "../../assets/data/navigation.json";
 import "./header.css";
 
 const Header: React.FC = () => {

@@ -1,10 +1,10 @@
 import React from "react";
-// import "./Home.css";
-import portfolioData from "../assets/data/portfolio.json";
+import "./Home.css";
+import homeData from "../assets/data/home.json";
 import "animate.css";
 
 const Home: React.FC = () => {
-  const { heading, name, tagline, resumeLink } = portfolioData.home;
+  const { heading, name, tagline, resumeLink, about } = homeData;
 
   return (
     <section id="home" className="home">
@@ -13,9 +13,8 @@ const Home: React.FC = () => {
           {heading}
           <div className="home-name">{name}</div>
         </h1>
-        <div className="animate__animated animate__bounce">
-          <h2 className="home-tagline">{tagline}</h2>
-        </div>
+        <div className="home-tagline">{tagline}</div>
+        <div className="home-about">{about}</div>
         <a href={resumeLink} target="_blank" className="home-button">
           Resume
         </a>
