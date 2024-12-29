@@ -18,13 +18,11 @@ jobs:
         with:
           node-version: 20.17.0
 
-      # Step 3: Install dependencies and build the project
       - name: Install dependencies and build
         run: |
           npm ci
           npm run build
 
-      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
