@@ -1,5 +1,6 @@
 import React from "react";
-import "./Home.css";
+import BalloonGroup from "../components/Balloon";
+// import "./Home.css";
 import homeData from "../assets/data/home.json";
 import "animate.css";
 
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
           Resume
         </a>
       </div>
+      <BalloonGroup />
     </section>
   );
 };

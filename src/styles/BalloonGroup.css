@@ -1,0 +1,78 @@
+.balloon-group {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  width: 80px;
+  height: 110px;
+  background: var(--color, #ff6f61);
+  border-radius: 50% 50% 45% 45%;
+  animation: float 3s ease-in-out infinite;
+  animation-delay: calc(-1s * var(--i, 1));
+}
+
+.balloon::before {
+  content: '';
+  width: 16px;
+  height: 10px;
+  background-color: var(--color, #ff6f61);
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.balloon::after {
+  content: '';
+  width: 2px;
+  height: 150px;
+  background-color: #999;
+  position: absolute;
+  bottom: -150px;
+  left: 50%;
+  transform-origin: top;
+  transform: translateX(-50%);
+  animation: curly 3s ease-in-out infinite, wave 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes curly {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-50%) translateY(5px) rotate(10deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px) rotate(-10deg);
+  }
+  75% {
+    transform: translateX(-50%) translateY(5px) rotate(15deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
